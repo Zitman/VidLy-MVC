@@ -1,0 +1,26 @@
+﻿@model VidLy3.ViewModels.MoviesViewModel
+@{
+    ViewBag.Title = "Movies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Movies</h1>
+
+@if (Model.Movies.Count == 0)
+{
+    <text>There are currently no movies</text>
+}
+else
+{
+    <table class=“table	table-bordered table-hover”>
+    <tr>
+        <th><h3>Movie</h3></th>
+    </tr>
+    @foreach (var movie in Model.Movies)
+    {
+        <tr>
+            <td>@movie.Name</td>
+        </tr>
+    }
+</table>
+}
